@@ -1,11 +1,10 @@
-var global_json = null;
-
 let app = new Vue({
   // bind it to the #root div in the DOM
   el: "#root",
   // provide data for bindings
   data: {
-    message: 'Hello World',
+    message: 'USD',
+    amount: 0,
   },
 //   method: {
 //       updateData(newJson){

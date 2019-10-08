@@ -1,25 +1,46 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        <title>Currency Exchange</title>
+        <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+        <script>
+            /*global $*/
+            $(function(){
+              $("#header").load("header.html"); 
+              $("#footer").load("footer.html"); 
+              console.log("HERE");
+            });
+        </script> 
+    </head>
+    <div id="header"></div>
     <body>
         <div id="root">
+        
         <!--FROM-->
         <select onchange="parseJson(value)">
           <option v-for="data in message">{{data}}</option>
           
         </select>
+        
         <!--AMOUNT-->
         <input type="text" v-model="amount">
+        
         <!--TO-->
         <select>
           <option v-for="data in message">{{data}}</option>
           
         </select>
+        
         <!--CONVERTED AMOUNT-->
         <p>The value of the input is: {{ amount }}.</p>
+        
         <!--RATES-->
         <p>Rates</p>
+        
         </div>
+        
         <script src="https://cdn.jsdelivr.net/npm/vue@2.6.2/dist/vue.js"></script>
         <script src="script.js"></script>
     </body>
+    <div id="footer"></div>
 </html>

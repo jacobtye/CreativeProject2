@@ -2,3 +2,58 @@
     padding: .6em;
     text-align: center !important;
 }
+.w3-card#rates{
+    max-height: 20em;
+    overflow-y: scroll;
+    text-decoration: none !important;
+}
+.w3-container#rates{
+    overflow: hidden;
+    text-align: center;
+    text-decoration: underline;
+}
+.w3-card{
+    margin:.4em;
+    padding: .3em;
+    background-color: white;
+    overflow-x:auto;
+}
+.w3-container{
+    background-color: lightblue;
+}
+.w3-container#title{
+    background-color: darkblue;
+}
+body{
+    background-color: black;
+}
+table{
+    text-align: center;
+}
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+input{
+    max-width: 50%;
+    margin: 0;
+    padding: 0;
+}
+footer{
+    background-color: lightgray;
+}
+@media only screen and (max-width: 40em) {
+    thead th {
+        display: none;
+    }
+
+    td, th {
+        display: block;
+    }
+
+    td[data-th]:before  {
+        content: attr(data-th);
+    }
+    table{
+        text-align: left !important;
+    }
+}

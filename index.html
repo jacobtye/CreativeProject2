@@ -12,7 +12,7 @@
             });
         </script> 
     </head>
-    <div class=w3-container>
+    <div class=w3-container id="title">
         <div id="header"></div>
     </div>
     <body>
@@ -20,35 +20,70 @@
             <div id="root">
                 <div class=w3-container>
                     
-                    <!--FROM-->
-                    <input list="from" onInput="parseJson(value)">
-                    <datalist id="from">
-                      <option v-for="data in message">{{data}}</option>
-                    </datalist>
-                    <!--AMOUNT-->
-                    <input type="text" v-model="amount">
-                
-                    <!--TO-->
-                    <input list="to">
-                    <datalist id="to">
-                      <option v-for="data in message">{{data}}</option>
-                    </datalist>
+                    <div class="w3-card">
+                    <table border="1">
+                        <thead>
+                            <tr>
+                                <th>From</th>
+                                <th>Amount</th>
+                                <th>To</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td data-th="From: ">
+                                    <!--FROM-->
+                                    <input list="from" onInput="parseJson(value)">
+                                    <datalist id="from">
+                                    <option v-for="data in message">{{data}}</option>
+                                    </datalist>
+                                </td>
+                                <td data-th="Amount: ">
+                                    <!--AMOUNT-->
+                                    <input type="text" v-model="amount">
+                                </td>
+                                <td data-th="To: ">
+                                    <!--TO-->
+                                    <input list="to">
+                                    <datalist id="to">
+                                    <option v-for="data in message">{{data}}</option>
+                                    </datalist>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    </div>
                 </div>
                 <div class=w3-container>
                     <!--CONVERTED AMOUNT-->
+                    <div class="w3-card">
                     <p>The value of the input is: {{ amount }}.</p>
+                    </div>
                 </div>
                 <!--RATES-->
-                <div class=w3-container>
-                    <p>Rates</p>
-                    <p>1.00 {{message[0]}} Equals:</p>
-                    <p>
-                        <ul>
-                            <!--<template v-for="name in message">-->
-                            <li v-for="(data, name, index) in rate" v-if="index != 0">{{data}} : {{name}}</li>
-                            <!--</template>-->
-                        </ul>
-                    </p>
+                <div class=w3-container id="rates">
+                    <div class = "w3-card" id="rates">
+                        <p>Rates</p>
+                        <p>
+                            <table border="1" width="100%">
+                                <thead>
+                                    <tr>
+                                        <th>Currency</th>
+                                        <th>Exchange Rate <i><b>(To 1.00 {{message[0]}})</b></i> </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr v-for="(data, name, index) in rate" v-if="index != 0">
+                                        <td data-th="Currency: ">{{name}}</td>
+                                        <td data-th="Exchange Rate: ">{{data}}</td>
+                                    </tr>
+                                </tbody>
+                                <!--<template v-for="name in message">-->
+                                <!--<li v-for="(data, name, index) in rate" v-if="index != 0">{{data}} : {{name}}</li>-->
+                                <!--</template>-->
+                            </table>
+                        </p>
+                    </div>
             </div>
         </div>
         </div>

@@ -21,19 +21,18 @@
                 <div class=w3-container>
                     
                     <!--FROM-->
-                    <select onchange="parseJson(value)">
+                    <input list="from" onInput="parseJson(value)">
+                    <datalist id="from">
                       <option v-for="data in message">{{data}}</option>
-                  
-                    </select>
-                
+                    </datalist>
                     <!--AMOUNT-->
                     <input type="text" v-model="amount">
                 
                     <!--TO-->
-                    <select>
+                    <input list="to">
+                    <datalist id="to">
                       <option v-for="data in message">{{data}}</option>
-                  
-                    </select>
+                    </datalist>
                 </div>
                 <div class=w3-container>
                     <!--CONVERTED AMOUNT-->

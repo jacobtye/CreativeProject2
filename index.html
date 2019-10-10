@@ -33,18 +33,18 @@
                             <tr>
                                 <td data-th="From: ">
                                     <!--FROM-->
-                                    <input list="from" onInput="parseJson(value)">
+                                    <input id="from" list="from" onInput="parseJson(value)">
                                     <datalist id="from">
                                     <option v-for="data in message">{{data}}</option>
                                     </datalist>
                                 </td>
                                 <td data-th="Amount: ">
                                     <!--AMOUNT-->
-                                    <input type="text" v-model="amount">
+                                    <input id="amount" type="text" v-model="amount">
                                 </td>
                                 <td data-th="To: ">
                                     <!--TO-->
-                                    <input list="to">
+                                    <input id="from" list="to">
                                     <datalist id="to">
                                     <option v-for="data in message">{{data}}</option>
                                     </datalist>

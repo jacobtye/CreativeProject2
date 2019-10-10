@@ -12,35 +12,51 @@
             });
         </script> 
     </head>
-    <div id="header"></div>
+    <div class=w3-container>
+        <div id="header"></div>
+    </div>
     <body>
-        <div id="root">
-        
-        <!--FROM-->
-        <select onchange="parseJson(value)">
-          <option v-for="data in message">{{data}}</option>
-          
-        </select>
-        
-        <!--AMOUNT-->
-        <input type="text" v-model="amount">
-        
-        <!--TO-->
-        <select>
-          <option v-for="data in message">{{data}}</option>
-          
-        </select>
-        
-        <!--CONVERTED AMOUNT-->
-        <p>The value of the input is: {{ amount }}.</p>
-        
-        <!--RATES-->
-        <p>Rates</p>
-        
+        <div class=w3-container>
+            <div id="root">
+                <div class=w3-container>
+                    
+                    <!--FROM-->
+                    <select onchange="parseJson(value)">
+                      <option v-for="data in message">{{data}}</option>
+                  
+                    </select>
+                
+                    <!--AMOUNT-->
+                    <input type="text" v-model="amount">
+                
+                    <!--TO-->
+                    <select>
+                      <option v-for="data in message">{{data}}</option>
+                  
+                    </select>
+                </div>
+                <div class=w3-container>
+                    <!--CONVERTED AMOUNT-->
+                    <p>The value of the input is: {{ amount }}.</p>
+                </div>
+                <!--RATES-->
+                <div class=w3-container>
+                    <p>Rates</p>
+                    <p>1.00 {{message[0]}} Equals:</p>
+                    <p>
+                        <ul>
+                            <!--<template v-for="name in message">-->
+                            <li v-for="(data, name, index) in rate" v-if="index != 0">{{data}} : {{name}}</li>
+                            <!--</template>-->
+                        </ul>
+                    </p>
+            </div>
         </div>
-        
+        </div>
         <script src="https://cdn.jsdelivr.net/npm/vue@2.6.2/dist/vue.js"></script>
         <script src="script.js"></script>
     </body>
+    <div class=w3-container>
     <div id="footer"></div>
+    </div>
 </html>

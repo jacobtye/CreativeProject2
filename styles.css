@@ -80,10 +80,19 @@ footer{
 }
 .navbar-toggler{
     float: right;
+    margin:0!important;
+    margin-top: .5em;
+    padding: 0!important;
 }
 .navbar-brand{
     float: left;
+    margin:0!important;
+    margin-top: 5em;
+    padding: 0!important;
 }
 #header{
+    background-color: darkblue;
+}
+html{
     background-color: darkblue;
 }

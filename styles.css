@@ -1,12 +1,12 @@
 .w3-card#title{
     padding-top: .6em;
     padding-bottom: .6em;
-    margin-left: 20%;
     font-size: 2em;
     font-weight: bold;
-    margin-right: auto;
-    width: 60%;
     text-align: center !important;
+    display: inline;
+    padding-left: 1.2em;
+    padding-right: 1.3em;
 }
 .w3-card#rates{
     max-height: 20em;
@@ -28,7 +28,9 @@
     background-color: lightblue;
 }
 .w3-container#title{
+    margin-top: .2em;
     background-color: darkblue;
+    text-align:center;
 }
 body{
     background-color: black;
@@ -72,4 +74,10 @@ footer{
     .w3-card#title{
     font-size: larger !important;
     }
+}
+.navbar-toggler{
+    float: right;
+}
+.navbar-brand{
+    float: left;
 }

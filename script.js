@@ -7,6 +7,7 @@ let app = new Vue({
   data: {
     message: 'USD',
     amount: 0,
+    change: 7,
     rate: {},
   },
 
@@ -22,4 +23,18 @@ async function parseJson(arg){
     // console.log(Object.keys(json.rates));
     // console.log(json);
 }
+async function calcDiff(){
+  event.preventDefault();
+  var from = await document.getElementById("from_input").value;
+  var amount = await document.getElementById("amount").value;
+  var to = await document.getElementById("to_input").value;
+  console.log(from, amount, app.rate[to])
+  var change = await amount * app.rate[to];
+  app.change = change;
+}
+document.getElementById("root").addEventListener("input", function(event) {
+    event.preventDefault();
+    calcDiff();
+
+});
 parseJson('USD');

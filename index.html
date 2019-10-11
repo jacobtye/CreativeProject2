@@ -32,18 +32,18 @@
                             <tr>
                                 <td data-th="From: ">
                                     <!--FROM-->
-                                    <input id="from" list="to" onInput="parseJson(value)">
-                                    <datalist id="to">
+                                    <input id="from_input" list="to" onInput="parseJson(value)">
+                                    <datalist id="from">
                                     <option v-for="data in message">{{data}}</option>
                                     </datalist>
                                 </td>
                                 <td data-th="Amount: ">
                                     <!--AMOUNT-->
-                                    <input id="amount" type="text" v-model="amount">
+                                    <input id="amount" type="decimal" v-model="amount">
                                 </td>
                                 <td data-th="To: ">
                                     <!--TO-->
-                                    <input id="from" list="to">
+                                    <input id="to_input" list="to">
                                     <datalist id="to">
                                     <option v-for="data in message">{{data}}</option>
                                     </datalist>
@@ -56,7 +56,7 @@
                 <div class=w3-container>
                     <!--CONVERTED AMOUNT-->
                     <div class="w3-card">
-                    <p>The value of the input is: {{ amount }}.</p>
+                    <p>The value of the input is: {{ change }}.</p>
                     </div>
                 </div>
                 <!--RATES-->

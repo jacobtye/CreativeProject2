@@ -1,6 +1,4 @@
 .w3-card#title{
-    padding-top: .6em;
-    padding-bottom: .6em;
     font-size: 2em;
     font-weight: bold;
     text-align: center !important;
@@ -31,6 +29,11 @@
     margin-top: .2em;
     background-color: darkblue;
     text-align:center;
+}
+.w3-container#white{
+    background-color: transparent;
+    padding: 0;
+    display: inline;
 }
 body{
     background-color: black;

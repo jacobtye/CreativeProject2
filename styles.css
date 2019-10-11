@@ -81,3 +81,6 @@ footer{
 .navbar-brand{
     float: left;
 }
+#header{
+    background-color: darkblue;
+}

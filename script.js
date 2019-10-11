@@ -7,11 +7,15 @@ let app = new Vue({
   data: {
     message: 'USD',
     amount: 0,
-    change: 7,
+    change: 0,
     rate: {},
+    to: 'USD',
   },
 
 });
+async function changeTo(arg){
+  app.to = arg;
+}
 async function parseJson(arg){
     const response = await fetch('https://api.exchangerate-api.com/v4/latest/' + arg);
     var json = await response.json();
@@ -24,11 +28,9 @@ async function parseJson(arg){
     // console.log(json);
 }
 async function calcDiff(){
-  event.preventDefault();
-  var from = await document.getElementById("from_input").value;
-  var amount = await document.getElementById("amount").value;
+  var amount = await app.amount;
   var to = await document.getElementById("to_input").value;
-  console.log(from, amount, app.rate[to])
+  console.log(amount, app.rate[to]);
   var change = await amount * app.rate[to];
   app.change = change;
 }
